@@ -1,13 +1,10 @@
 #include <stdio.h>
 int main(void){
-    int alunos, alunCont,  matricula, acima, menor;
-    float notaProva, mediaTrab;
+    int alunos, alunCont = 0,  matricula = -1, acima = 0, menor = 0, somaTurma=0;
+    float notaProva, mediaTrab, mediaAluno, mediaTurma=0;
     printf("Informe a quantidade de aluno que tem na turma: \n");
     scanf("%d",&alunos);
-    alunCont = 0;
-    matricula = -1;
-    acima = 0;
-    menor = 0;
+
     while(matricula != 0 ){
         alunCont ++;
         printf("Insira a matricula do aluno %d: \n", alunCont);
@@ -21,8 +18,6 @@ int main(void){
         printf("Insira a media dos trabalhos do aluno %d: \n",alunCont);
         scanf("%f",&mediaTrab);
 
-        
-            
             if(notaProva > 7){
                 acima++;
             }
@@ -30,6 +25,10 @@ int main(void){
             if(notaProva < 3){
                 menor++;
             }
+
+            mediaAluno = 0.85*notaProva+ 0.15*mediaTrab;
+            somaTurma++;
+            mediaTurma = (mediaTurma + mediaAluno)/somaTurma;
 
         }
     }//fim while
